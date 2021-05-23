@@ -1,6 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
+import { isDate } from 'util';
 
-const entrySchema = new Schema({
+interface IEntrySchema {
+  youtube: number,
+  timestamp: Date
+}
+
+const entrySchema = new Schema<IEntrySchema>({
   youtube: {
     type: Number,
     default: 0
