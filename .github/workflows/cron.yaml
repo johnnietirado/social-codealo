@@ -1,0 +1,12 @@
+name: Everyday at 12:00 AM UTC
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call our API route
+        run: |
+          curl --request POST \
+          --url 'https://social-codealo-5w6cnyruj-johnnie.vercel.app/api/statistics'
